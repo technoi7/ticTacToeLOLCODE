@@ -37,32 +37,95 @@ HOW IZ I insertValue YR step
 	
 	input, WTF?
 	OMG "1"
-		s1 R move
+		DIFFRINT s1 AN "_"
+		O RLY?
+			YA RLY
+				VISIBLE "YOU DON'T MOVE AT THE SAME BOX TWICE"
+			NO WAI
+				s1 R move
+		OIC
 		GTFO
+
 	OMG "2"
-		s2 R move
+		DIFFRINT s2 AN "_"
+		O RLY?
+			YA RLY
+				VISIBLE "YOU DON'T MOVE AT THE SAME BOX TWICE"
+			NO WAI
+				s2 R move
+		OIC
 		GTFO
+
 	OMG "3"
-		s3 R move
+		DIFFRINT s3 AN "_"
+		O RLY?
+			YA RLY
+				VISIBLE "YOU DON'T MOVE AT THE SAME BOX TWICE"
+			NO WAI
+				s3 R move
+		OIC
 		GTFO
+
 	OMG "4"
-		s4 R move
+		DIFFRINT s4 AN "_"
+		O RLY?
+			YA RLY
+				VISIBLE "YOU DON'T MOVE AT THE SAME BOX TWICE"
+			NO WAI
+				s4 R move
+		OIC
 		GTFO
+
 	OMG "5"
-		s5 R move
+		DIFFRINT s5 AN "_"
+		O RLY?
+			YA RLY
+				VISIBLE "YOU DON'T MOVE AT THE SAME BOX TWICE"
+			NO WAI
+				s5 R move
+		OIC
 		GTFO
+
 	OMG "6"
-		s6 R move
+		DIFFRINT s6 AN "_"
+		O RLY?
+			YA RLY
+				VISIBLE "YOU DON'T MOVE AT THE SAME BOX TWICE"
+			NO WAI
+				s6 R move
+		OIC
 		GTFO
+
 	OMG "7"
-		s7 R move
+		DIFFRINT s7 AN "_"
+		O RLY?
+			YA RLY
+				VISIBLE "YOU DON'T MOVE AT THE SAME BOX TWICE"
+			NO WAI
+				s7 R move
+		OIC
 		GTFO
+
 	OMG "8"
-		s8 R move
+		DIFFRINT s8 AN "_"
+		O RLY?
+			YA RLY
+				VISIBLE "YOU DON'T MOVE AT THE SAME BOX TWICE"
+			NO WAI
+				s8 R move
+		OIC
 		GTFO
+
 	OMG "9"
-		s9 R move
+		DIFFRINT s9 AN "_"
+		O RLY?
+			YA RLY
+				VISIBLE "YOU DON'T MOVE AT THE SAME BOX TWICE"
+			NO WAI
+				s9 R move
+		OIC
 		GTFO
+
 	OMGWTF
 		VISIBLE "I SAID BETWEEN 1-9"
 	OIC
