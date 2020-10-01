@@ -21,7 +21,6 @@ HOW IZ I printGame
 IF U SAY SO
 
 HOW IZ I insertValue YR step
-
 	I HAS A move	
 	I HAS A value ITZ MOD OF step AN 2
 	BOTH SAEM value AN 0
@@ -31,7 +30,7 @@ HOW IZ I insertValue YR step
 		NO WAI
 			move R "0"
 	OIC
-
+	
 	I HAS A input
 	VISIBLE "ENTER A VALUE BEWTEEN 1-9 TO PLACE YOUR MOVE:"
 	GIMMEH input
@@ -67,15 +66,22 @@ HOW IZ I insertValue YR step
 	OMGWTF
 		VISIBLE "I SAID BETWEEN 1-9"
 	OIC
-	
 IF U SAY SO
 
+OBTW
 IM IN YR printLoop UPPIN YR count TIL BOTH SAEM count AN BIGGR OF count AN 9
 	VISIBLE count
 IM OUTTA YR printLoop
 
-I IZ printGame MKAY
-I IZ insertValue YR 6 MKAY
-I IZ printGame MKAY
+TLDR
+
+BTW game loop starts here
+
+IM IN YR gameLoop UPPIN YR step
+	I IZ printGame MKAY
+	BTW VISIBLE step
+	I IZ insertValue YR step MKAY
+	
+IM OUTTA YR gameLoop
 
 KTHXBYE 
