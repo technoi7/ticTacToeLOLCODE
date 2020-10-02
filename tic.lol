@@ -10,16 +10,46 @@ I HAS A s7 ITZ "_"
 I HAS A s8 ITZ "_"
 I HAS A s9 ITZ "_"
 
-I HAS A h1 ITZ SMOOSH s1 AN s2 AN s3 MKAY
-I HAS A h2 ITZ SMOOSH s4 AN s5 AN s6 MKAY
-I HAS A h3 ITZ SMOOSH s7 AN s8 AN s9 MKAY
+HOW IZ I h2Fun
+	I HAS A h2 ITZ SMOOSH s4 AN s5 AN s6 MKAY
+	FOUND YR h2
+IF U SAY SO
 
-I HAS A v1 ITZ SMOOSH s1 AN s4 AN s7 MKAY
-I HAS A v2 ITZ SMOOSH s2 AN s5 AN s8 MKAY
-I HAS A v3 ITZ SMOOSH s3 AN s6 AN s9 MKAY
+HOW IZ I h3Fun
+	I HAS A h3 ITZ SMOOSH s7 AN s8 AN s9 MKAY
+	FOUND YR h3
+IF U SAY SO
 
-I HAS A x1 ITZ SMOOSH s1 AN s5 AN s9 MKAY
-I HAS A x2 ITZ SMOOSH s3 AN s5 AN s7 MKAY
+HOW IZ I h1Fun
+	I HAS A h1 ITZ SMOOSH s1 AN s2 AN s3 MKAY
+	FOUND YR h1
+IF U SAY SO
+
+HOW IZ I v1Fun
+	I HAS A v1 ITZ SMOOSH s1 AN s4 AN s7 MKAY
+	FOUND YR v1
+IF U SAY SO
+
+HOW IZ I v2Fun
+	I HAS A v2 ITZ SMOOSH s2 AN s5 AN s8 MKAY
+	FOUND YR v2
+IF U SAY SO
+
+HOW IZ I v3Fun
+	I HAS A v3 ITZ SMOOSH s3 AN s6 AN s9 MKAY
+	FOUND YR v3
+IF U SAY SO
+
+HOW IZ I x1Fun
+	I HAS A x1 ITZ SMOOSH s1 AN s5 AN s9 MKAY
+	FOUND YR x1
+IF U SAY SO
+
+HOW IZ I x2Fun
+	I HAS A x2 ITZ SMOOSH s3 AN s5 AN s7 MKAY
+	FOUND YR x2
+IF U SAY SO
+
 
 HOW IZ I printGame
     I HAS A first ITZ SMOOSH "_" AN s1 AN "_|_" AN s2 AN "_|_" AN s3 AN "_" MKAY
@@ -34,6 +64,7 @@ IF U SAY SO
 HOW IZ I insertValue YR step
 	I HAS A move	
 	I HAS A value ITZ MOD OF step AN 2
+	
 	BOTH SAEM value AN 0
 	O RLY?
 		YA RLY
@@ -142,71 +173,78 @@ HOW IZ I insertValue YR step
 	OIC
 IF U SAY SO
 
-OBTW
-IM IN YR printLoop UPPIN YR count TIL BOTH SAEM count AN BIGGR OF count AN 9
-	VISIBLE count
-IM OUTTA YR printLoop
-
-TLDR
-
 BTW game loop starts here
 
-I HAS A state ITZ FAIL
+I HAS A state ITZ WIN
+BTW I HAS A break ITZ FAIL
 
-HOW IZ I ch1
-	BOTH SAEM h1 AN "XXX"
+HOW IZ I plrWin YR step
+	I HAS A value ITZ MOD OF step AN 2
+	
+	BOTH SAEM value AN 0
 	O RLY?
 		YA RLY
-			state R WIN
-			GTFO
-
-		MEBBE BOTH SAEM h2 AN "XXX"
-			state R WIN
-			GTFO
-
-		MEBBE BOTH SAEM h3 AN "XXX"
-			state R WIN
-			GTFO
-
-		MEBBE BOTH SAEM v1 AN "XXX"
-			state R WIN
-			GTFO
-
-		MEBBE BOTH SAEM v2 AN "XXX"
-			state R WIN
-			GTFO
-
-		MEBBE BOTH SAEM v3 AN "XXX"
-			state R WIN
-			GTFO
-
-		MEBBE BOTH SAEM x1 AN "XXX"
-			state R WIN
-			GTFO
-
-		MEBBE BOTH SAEM x2 AN "XXX"
-			state R WIN
-			GTFO
-
+			VISIBLE "Player(0) won!"
 		NO WAI
-			""
+			VISIBLE "Player(X) won!"
 	OIC
 IF U SAY SO
 
-IM IN YR gameLoop UPPIN YR step
-	I IZ printGame MKAY
-	BTW VISIBLE step
-	I IZ insertValue YR step MKAY
-	I IZ ch1 MKAY
-
-	BOTH SAEM step AN 9
+HOW IZ I endGame
+	BOTH SAEM I IZ h1Fun MKAY AN "XXX"
 	O RLY?
 		YA RLY
+			I IZ plrWin YR step MKAY
+			state R FAIL
 			GTFO
+
+		MEBBE BOTH SAEM I IZ h2Fun MKAY AN "XXX"
+			I IZ plrWin YR step MKAY
+			state R FAIL
+			GTFO
+
+		MEBBE BOTH SAEM I IZ h3Fun MKAY AN "XXX"
+			I IZ plrWin YR step MKAY
+			state R FAIL
+			GTFO
+
+		MEBBE BOTH SAEM I IZ v1Fun MKAY AN "XXX"
+			I IZ plrWin YR step MKAY
+			state R FAIL
+			GTFO
+
+		MEBBE BOTH SAEM I IZ v2Fun MKAY AN "XXX"
+			I IZ plrWin YR step MKAY
+			state R FAIL
+			GTFO
+
+		MEBBE BOTH SAEM I IZ v3Fun MKAY AN "XXX"
+			I IZ plrWin YR step MKAY
+			state R FAIL
+			GTFO
+
+		MEBBE BOTH SAEM I IZ x1Fun MKAY AN "XXX"
+			I IZ plrWin YR step MKAY
+			state R FAIL
+			GTFO
+
+		MEBBE BOTH SAEM I IZ x2Fun MKAY AN "XXX"
+			I IZ plrWin YR step MKAY
+			state R FAIL
+			GTFO
+
 		NO WAI
 			VISIBLE ""
 	OIC
-	
+IF U SAY SO
+
+IM IN YR gameLoop UPPIN YR step WILE state
+	I IZ printGame MKAY
+	I IZ endGame MKAY
+	BOTH SAEM state AN WIN, O RLY?
+	YA RLY
+		I IZ insertValue YR step MKAY
+	OIC
 IM OUTTA YR gameLoop
 
 KTHXBYE 
