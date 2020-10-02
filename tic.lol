@@ -173,10 +173,7 @@ HOW IZ I insertValue YR step
 	OIC
 IF U SAY SO
 
-BTW game loop starts here
-
 I HAS A state ITZ WIN
-BTW I HAS A break ITZ FAIL
 
 HOW IZ I plrWin YR step
 	I HAS A value ITZ MOD OF step AN 2
